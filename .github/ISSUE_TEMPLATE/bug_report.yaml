@@ -8,7 +8,7 @@ body:
       value: |
         ❗ **Before you fill in this bug report template**
         Please search open/closed issues before submitting. The bug might be already known and fixed before.
-- type: textarea
+  - type: textarea
     id: description
     attributes:
       label: 📝 Description
@@ -26,10 +26,10 @@ body:
     attributes:
       label: What steps can be followed to reproduce the bug or issue?
       placeholder: |
-      1. Go to...
-      2. Click on...
-      3. Scroll down to...
-      4. See error when...
+        1. Go to...
+        2. Click on...
+        3. Scroll down to...
+        4. See error when...
     validations:
       required: true
   - type: textarea
@@ -39,16 +39,16 @@ body:
       description: |
         You can provide here any additional information you might have like screenshots or links.
   - type: dropdown
-  attributes:
-    label: Wave module
-    description: In what module of Wave problem occured?
-    multiple: true
-    options:
-      - label: Core
-      - label: React
-      - label: Site (documentation)
-      - label: Storybook
-      - label: one of design-tokens
+    attributes:
+      label: Wave module
+      description: In what module of Wave problem occured?
+      multiple: true
+      options:
+        - label: Core
+        - label: React
+        - label: Site (documentation)
+        - label: Storybook
+        - label: one of design-tokens
     validations:
       required: false
   - type: input
