@@ -1,17 +1,19 @@
 name: Bug Report
 description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
+title: ""
+labels: ["bug"]
 assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to fill out this bug report
-  - type: textarea
-    id: what-happened
+        ❗ **Before you fill in this bug report template**
+        Please search open/closed issues before submitting. The bug might be already known and fixed before.
+- type: textarea
+    id: description
     attributes:
-      label: What happened?
+      label: 📝 Description
+      description: Please describe the issue.
     validations:
       required: true
   - type: textarea
@@ -21,79 +23,73 @@ body:
     validations:
       required: true
   - type: textarea
-    id: impact
-    attributes:
-      label: How is this problem impacting your service?
-    validations:
-      required: true
-  - type: textarea
     id: reproduction-steps
     attributes:
-      label: What list of steps can be followed to reproduce the bug or issue?
+      label: What steps can be followed to reproduce the bug or issue?
+      placeholder: |
+      1. Go to...
+      2. Click on...
+      3. Scroll down to...
+      4. See error when...
     validations:
       required: true
   - type: textarea
-    id: example
+    id: additional-information
     attributes:
-      label: Example
-      description: Add screenshot(s) or examples of the bug or issue
-      placeholder: Add a file, image or link
+      label: ℹ️ Additional Information.
+      description: |
+        You can provide here any additional information you might have like screenshots or links.
+  - type: dropdown
+  attributes:
+    label: Wave module
+    description: In what module of Wave problem occured?
+    multiple: true
+    options:
+      - label: Core
+      - label: React
+      - label: Site (documentation)
+      - label: Storybook
+      - label: one of design-tokens
     validations:
       required: false
   - type: input
     id: version
     attributes:
-      label: What version of the Wave Design System are you using?
-      placeholder: For example, 1.6.0
-    validations:
-      required: true
-  - type: checkboxes
-    id: device
-    attributes:
-      label: What devices are you seeing the problem on?
-      options:
-        - label: Desktop
-        - label: Mobile
-        - label: Tablet
-  - type: input
-    id: device-details
-    attributes:
-      label: Device details
-      description: Here you can provide further information about the device(s) that are affected by this bug or issue.
+      label: And on what version of the model problem occured?
+      placeholder: e.g. Wave react 0.5.1 or Wave core 1.6.0
     validations:
       required: false
   - type: checkboxes
     id: operating-system
     attributes:
       label: What operating systems are you seeing the problem on?
+      multiple: true
       options:
         - label: Windows
         - label: macOS
         - label: Android
         - label: iOS
         - label: Other
-  - type: input
-    id: operating-system-details
-    attributes:
-      label: Operating system details
-      description: Here you can provide further information about the operating system(s) that are affected by this bug or issue.
     validations:
       required: false
   - type: checkboxes
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
+      multiple: true
       options:
-        - label: Firefox
         - label: Chrome
+        - label: Firefox
         - label: Safari
         - label: Microsoft Edge
-        - label: Microsoft Internet Explorer
+        - label: Internet Explorer
         - label: Other
-  - type: input
-    id: browsers-details
+    validations:
+      required: false
+  - type: textarea
+    id: environment-details
     attributes:
-      label: Browser details
-      description: Here you can provide further information about the browser(s) that are affected by this bug or issue.
+      label: Environment details
+      description: Here you can provide further information about the OS, browser, binaries (node, yarn, npm etc.) versions
     validations:
       required: false
