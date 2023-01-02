@@ -38,11 +38,10 @@ body:
       label: ℹ️ Additional Information.
       description: |
         You can provide here any additional information you might have like screenshots or links.
-  - type: dropdown
+  - type: checkboxes
     attributes:
       label: Wave module
       description: In what module of Wave problem occured?
-      multiple: true
       options:
         - label: Core
         - label: React
@@ -62,7 +61,6 @@ body:
     id: operating-system
     attributes:
       label: What operating systems are you seeing the problem on?
-      multiple: true
       options:
         - label: Windows
         - label: macOS
@@ -75,7 +73,6 @@ body:
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
-      multiple: true
       options:
         - label: Chrome
         - label: Firefox
