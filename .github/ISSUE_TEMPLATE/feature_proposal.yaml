@@ -1,0 +1,40 @@
+name: 🧩 New feature proposal
+description: Propose a new component, function or documentation to add to the Wave Design System
+title: "[Feature]: "
+labels: ["New feature proposal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you fill in this proposal template:**
+        Please search open/closed issues before submitting. The feature might be already included in Wave or could be proposed before.
+  - type: textarea
+    id: description
+    attributes:
+      label: Please describe the feature you would like to add to the Wave Design System.
+      description: Please provide a short description of the new feature you want to propose. This could be a component, utility, or new documentation for an existing feature.
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: Why should this new feature be added to the Wave Design System?
+      description: |
+        Explain why you think this feature should be added to the Wave Design System. 
+    validations:
+      required: true
+  - type: textarea
+    id: example-solution
+    attributes:
+      label: Example solution
+      description: Include here prototypes, examples, code or research that support your proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Include here other resources like links or screenshots to help us better understand the proposal
+    validations:
+      required: false
