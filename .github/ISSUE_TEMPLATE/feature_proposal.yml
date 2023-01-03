@@ -1,6 +1,6 @@
-name: 🧊 Feature proposal
-description: Propose a new component, function or documentation to add to the Wave Design System
-labels: ["feature proposal"]
+name: 🚀 Feature proposal
+description: Propose a new component, function or documentation to add to the Wave Design System.
+labels: ['feature proposal']
 assignees: []
 body:
   - type: markdown
@@ -20,7 +20,7 @@ body:
     attributes:
       label: 🤔 Why should this new feature be added to the Wave Design System?
       description: |
-        Explain why you think this feature should be added to the Wave Design System. 
+        Explain why you think this feature should be added to the Wave Design System.
     validations:
       required: true
   - type: textarea
@@ -34,6 +34,6 @@ body:
     id: additional-info
     attributes:
       label: ℹ️ Additional Information.
-      description: Include here other resources like links or screenshots to help us better understand the proposal
+      description: Include here other resources like links or screenshots to help us better understand the proposal.
     validations:
       required: false

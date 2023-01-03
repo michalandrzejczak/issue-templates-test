@@ -1,5 +1,5 @@
-name: 🐛 Bug Report
-description: File a bug report
+name: 🐞 Bug Report
+description: File a bug report.
 labels: ['bug']
 assignees: []
 body:
@@ -53,7 +53,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: And on what version of the model problem occured?
+      label: And which version of the module this problem affects?
       placeholder: e.g. Wave react 0.5.1 or Wave core 1.6.0
     validations:
       required: false
@@ -86,6 +86,6 @@ body:
     id: environment-details
     attributes:
       label: Environment details
-      description: Here you can provide further information about the OS, browser, binaries (node, yarn, npm etc.) versions
+      description: Here you can provide further information about the OS, browser, binaries (node, yarn, npm etc.) versions.
     validations:
       required: false
