@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'feature-request')
     steps:
-    - name: add-new-issues-to-organization-based-project-column
-      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
-      env:
+    - name: Assign issues to project
+      uses: technote-space/create-project-card-action@v1
+      with:
+        PROJECT: issue-templates-test project
+        COLUMN: Feature request
         GITHUB_TOKEN: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/users/michalandrzejczak/projects/1
-        GITHUB_PROJECT_COLUMN_NAME: Feature request
