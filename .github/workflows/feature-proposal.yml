@@ -5,25 +5,13 @@ on:
     types: [opened]
 
 jobs:
-  add-to-project:
-    name: Add issue to project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Make project card from issue
-        uses: actions/add-to-project@v0.4.0
-        with:
-          project-url: https://github.com/users/michalandrzejczak/projects/1
-          github-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
-          labeled: feature-request
-          label-operator: OR
-  assign-project-card-to-column:
-    name: Assign project card to column
+  add-to-project-to-column:
+    name: Add issue to project to column
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'feature-request')
-    steps:  
-      - name: Assign project card to column 
-        uses: alex-page/github-project-automation-plus@v0.8.2
+    steps:
+      - uses: konradpabjan/actions-add-new-issue-to-column@v1.1
         with:
-          project: "issue-templates-test project"
-          column: "Feature request"
-          repo-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
+          action-token: '${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}'
+          project-url: 'https://github.com/users/michalandrzejczak/projects/1'
+          column-name: 'Feature request'
