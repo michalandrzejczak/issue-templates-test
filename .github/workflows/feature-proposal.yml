@@ -18,9 +18,9 @@ jobs:
           label-operator: OR
       - name: Log issue info
         run: |
-          echo "Issue first label: ${{ github.event.issue.labels[0] }}"
+          echo "Issue first label: ${{ github.event.issue.labels[0].name }}"
       - name: Assign project card to column
-        if: github.event.issue.labels.length > 0 && github.event.issue.labels[0].name == 'feature-request'
+        if: github.event.issue.labels[0].name == 'feature-request'
         uses: alex-page/github-project-automation-plus@v0.8.2
         with:
           project: issue-templates-test project
