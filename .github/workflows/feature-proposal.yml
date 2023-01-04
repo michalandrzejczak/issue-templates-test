@@ -13,6 +13,6 @@ jobs:
       - uses: actions/add-to-project@v0.4.0
         with:
           project-url: https://github.com/users/michalandrzejczak/projects/1
-          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          github-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
           labeled: feature-request
           label-operator: OR
