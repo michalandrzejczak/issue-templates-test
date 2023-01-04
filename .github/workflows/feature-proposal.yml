@@ -9,14 +9,23 @@ jobs:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@v0.4.0
+      - name: Make project card from issue 
+        uses: actions/add-to-project@v0.4.0
         with:
           project-url: https://github.com/users/michalandrzejczak/projects/1
           github-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
           labeled: feature-request
           label-operator: OR
-      - if: github.event.label.name == 'feature-request'
+      - name: Log issue info
+        run: |
+          echo "Issue: ${{ github.event.issue }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "Issue label: ${{ github.event.issue.label }}"
+          echo "Issue labels: ${{ github.event.issue.labels }}"
+      - name: Assign project card to column
+        if: github.event.issue.name == 'feature-request'
         uses: alex-page/github-project-automation-plus@v0.8.2
         with:
           project: issue-templates-test project
           column: Feature request
+          repo-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
