@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'feature-request')
     steps:
-      - uses: konradpabjan/actions-add-new-issue-to-column@v1.1
-        with:
-          action-token: '${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}'
-          project-url: 'https://github.com/users/michalandrzejczak/projects/1'
-          column-name: 'Feature request'
+    - name: add-new-issues-to-organization-based-project-column
+      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
+        GITHUB_PROJECT_URL: https://github.com/users/michalandrzejczak/projects/1
+        GITHUB_PROJECT_COLUMN_NAME: Feature request
