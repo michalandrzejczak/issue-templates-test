@@ -16,13 +16,14 @@ jobs:
           github-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
           labeled: feature-request
           label-operator: OR
-      - name: Log issue info
-        run: |
-          echo "Issue first label: ${{ github.event.issue.labels[0].name }}"
-      - name: Assign project card to column
-        if: github.event.issue.labels[0].name == 'feature-request'
+  assign-project-card-to-column:
+    name: Assign project card to column
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'feature-request')
+    steps:  
+      - name: Assign project card to column 
         uses: alex-page/github-project-automation-plus@v0.8.2
         with:
-          project: issue-templates-test project
-          column: Feature request
+          project: "issue-templates-test project"
+          column: "Feature request"
           repo-token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
