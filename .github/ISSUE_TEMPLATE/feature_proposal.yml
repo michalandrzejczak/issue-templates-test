@@ -1,6 +1,6 @@
 name: 🚀 Feature proposal
 description: Propose a new component, function or documentation to add to the Wave Design System.
-labels: ['feature proposal']
+labels: ['feature-request']
 assignees: []
 body:
   - type: markdown
