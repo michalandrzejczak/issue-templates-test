@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'feature-request')
     steps:
-    - name: Assign issues to project
-      uses: technote-space/create-project-card-action@v1
-      with:
-        PROJECT: issue-templates-test project
-        COLUMN: Feature request
-        GITHUB_TOKEN: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
+      - name: Assign issues to project
+        uses: konradpabjan/actions-add-new-issue-to-column@v1.1
+        with:
+          action-token: '${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}'
+          project-url: 'https://github.com/users/michalandrzejczak/projects/1'
+          column-name: 'Feature request'
