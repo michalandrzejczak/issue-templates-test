@@ -11,8 +11,11 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'feature-request')
     steps:
       - name: Assign issues to project
-        uses: konradpabjan/actions-add-new-issue-to-column@v1.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
-          action-token: '${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}'
-          project-url: 'https://github.com/users/michalandrzejczak/projects/1'
-          column-name: 'Feature request'
+          gh_token: ${{ secrets.ISSUE_TEMPLATES_TEST_TOKEN }}
+          user: michalandrzejczak
+          # organization: volue-org-name
+          project_id: 1
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: Feature request # Target status
